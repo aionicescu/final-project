@@ -1,3 +1,5 @@
+import django
+
 """
 Django settings for ticketSite project.
 
