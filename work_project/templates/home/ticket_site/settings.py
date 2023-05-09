@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ticket_site.urls'
+ROOT_URLCONF = 'templates.home.ticket_site.urls'
 
 TEMPLATES = [
     {
