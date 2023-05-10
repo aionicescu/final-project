@@ -10,9 +10,9 @@ class Ticket(models.Model):
     description = models.TextField(max_length=300)
     status = models.CharField(max_length=100, choices=TicketStatus)
 
-    # active = models.BooleanField(default=True)
-    # start_date = models.DateField()
-    # end_date = models.DateField()
+    active = models.BooleanField(default=True)
+    start_date = models.DateField()
+    end_date = models.DateField()
     event = models.ForeignKey(Event, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -11,9 +11,9 @@ class User(models.Model):
     age = models.IntegerField()
     email = models.EmailField(max_length=30)
     description = models.TextField(max_length=300)
-    active = models.BooleanField(default=True)
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
+    # active = models.BooleanField(default=True)
+    # start_date = models.DateTimeField()
+    # end_date = models.DateTimeField()
     gender = models.CharField(max_length=6, choices=gender_options)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, null=True)
 
