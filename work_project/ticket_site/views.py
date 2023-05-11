@@ -14,3 +14,5 @@ def about(request):
 def base(request):
   template = loader.get_template('base.html')
   return HttpResponse(template.render())
+
+# commit
