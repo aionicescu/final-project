@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
-<body>
-<p>Hello from homepage!</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% endblock %}
+
+{% block js_scripts %}
+    <script src="{% static '/js/home.js' %}"></script>
+{% endblock %}
