@@ -1,6 +1,7 @@
 import os
 
 import django
+from django.core.files import images
 
 """
 Django settings for ticket_site project.
@@ -45,6 +46,9 @@ INSTALLED_APPS = [
     'event',
     'home',
     'user',
+    'informatii',
+
+
 
 ]
 
@@ -89,7 +93,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_URL = '/images/'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

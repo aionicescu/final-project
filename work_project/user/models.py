@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class User(models.Model):
     gender_options = (('male', 'Male'), ('female', 'Female'))
 
