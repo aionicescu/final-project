@@ -20,7 +20,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -31,7 +30,6 @@ SECRET_KEY = 'django-insecure-xisme7c23rv1=$_a_oeah@yu__%s8)!5smr3&+u)m5$0=-ob+r
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -48,8 +46,6 @@ INSTALLED_APPS = [
     'user',
     'informatii',
 
-
-
 ]
 
 MIDDLEWARE = [
@@ -63,11 +59,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ticket_site.urls'
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [TEMPLATE_DIR]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -82,7 +78,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ticket_site.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -114,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -127,7 +121,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

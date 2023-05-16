@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.shortcuts import redirect
 
 from event.models import CHOICES, Eveniment
+from ticket_site.forms import TicketForm
 
 
 class Ticket(models.Model):
@@ -33,3 +35,5 @@ class Order(models.Model):
 
     class Meta:
         verbose_name_plural = "Orders"
+
+

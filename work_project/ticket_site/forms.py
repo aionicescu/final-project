@@ -1,5 +1,5 @@
-from django.contrib.admin import forms
-from django.forms import TextInput, EmailInput, Textarea, DateInput, Select
+
+from django.forms import TextInput, EmailInput, Textarea, DateInput, Select, forms
 
 
 class TicketForm(forms.ModelForm):
@@ -18,3 +18,8 @@ class TicketForm(forms.ModelForm):
         'end_date': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         'event': Select(attrs={'class': 'form-select'})
     }
+
+
+
+
+

@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.urls import path, include
+from ticket_site.views import register_ticket
 
 from ticket_site import settings, views
 from ticket_site.views import order_list
@@ -28,6 +29,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('informatii/', views.informatii_view, name='informatii'),
     path('orders/', order_list, name='order_list'),
+    path('ticket_site/', register_ticket, name='register-ticket'),
 ]
 urlpatterns += staticfiles_urlpatterns()
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
