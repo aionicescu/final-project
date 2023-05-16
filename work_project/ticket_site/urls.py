@@ -21,11 +21,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from ticket_site import settings, views
+from ticket_site.views import order_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('informatii/', views.informatii_view, name='informatii'),
+    path('orders/', order_list, name='order_list'),
 ]
 urlpatterns += staticfiles_urlpatterns()
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,7 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 
-from event.models import CHOICES,  Eveniment
-from user.models import User
+from event.models import CHOICES, Eveniment
 
 
 class Ticket(models.Model):
@@ -20,6 +20,7 @@ class Ticket(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
