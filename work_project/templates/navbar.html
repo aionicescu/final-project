@@ -16,14 +16,14 @@
     <!-- Sidebar-->
     <form method="POST"></form>
     <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light"><h2>FC SDA</h2></div>
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Footbal</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Club</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Membri</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Fani</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Stadion</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'register-ticket' %}">Tichete</a>
+        <div class="sidebar-heading border-bottom bg-body"><h2>FC SDA</h2></div>
+        <div class="list-group list-group-item-dark bg-dark">
+            <a style="background-color:-moz-mac-accentdarkestshadow" class = "list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Footbal</h5></a>
+            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Club</h5></a>
+            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Membri</h5></a>
+            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Fani</h5></a>
+            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Stadion</h5></a>
+            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'register-ticket' %}"><h5>Tichete</h5></a>
         </div>
 
 
@@ -31,20 +31,20 @@
     <!-- Page content wrapper-->
     <div id="page-content-wrapper">
         <!-- Top navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark border-bottom">
             <div class="container-fluid">
-                <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                <button class="btn btn-light" id="sidebarToggle">Toggle Menu</button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                        <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link " href="#!">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="informatii/">Informatii</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'order_list' %}"> Order</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'list-of-user' %}">User</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -61,7 +61,7 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-            <h3 class="col-md-6-4">SDA FOREVER</h3>
+            <h3 class="text-center">SDA FOREVER</h3>
             <br><br>
             <p>Bun venit în lumea echipei noastre de fotbal, creată și condusă cu pasiune de Ionicescu Alexandru și
                 Horoiu Cezar!! Suntem mândri să vă prezentăm echipa noastră,
@@ -93,5 +93,7 @@
     </div>
 </div>
 {#<body id="bg" style="background-image: url('{% static "images/real.jpg" %}');">#}
+<footer> <small>Copyright © 2023 Football History Archives . All Rights Reserved.</small></footer>
+
 </body>
 </html>

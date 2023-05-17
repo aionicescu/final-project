@@ -26,6 +26,7 @@ from ticket_site.views import order_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('user/', include('user.urls')),
     path('', include('home.urls')),
     path('informatii/', views.informatii_view, name='informatii'),
     path('orders/', order_list, name='order_list'),
