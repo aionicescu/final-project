@@ -1,5 +1,5 @@
 """
-WSGI config for ticket_site project.
+WSGI config for ticketing project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

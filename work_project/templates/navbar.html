@@ -1,99 +1,31 @@
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <title>Simple Sidebar - Start Bootstrap Template</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
-</head>
-<body>
-<div class="d-flex" id="wrapper">
-    <!-- Sidebar-->
-    <form method="POST"></form>
-    <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-body"><h2>FC SDA</h2></div>
-        <div class="list-group list-group-item-dark bg-dark">
-            <a style="background-color:-moz-mac-accentdarkestshadow" class = "list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Footbal</h5></a>
-            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Club</h5></a>
-            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Membri</h5></a>
-            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Fani</h5></a>
-            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><h5>Stadion</h5></a>
-            <a style="background-color:-moz-mac-accentdarkestshadow"class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'register-ticket' %}"><h5>Tichete</h5></a>
-        </div>
-
-
-    </div>
-    <!-- Page content wrapper-->
-    <div id="page-content-wrapper">
-        <!-- Top navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark border-bottom">
-            <div class="container-fluid">
-                <button class="btn btn-light" id="sidebarToggle">Toggle Menu</button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                        <li class="nav-item active"><a class="nav-link " href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="informatii/">Informatii</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'order_list' %}"> Order</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'list-of-user' %}">User</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#!">Action</a>
-                                <a class="dropdown-item" href="#!">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#!">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page content-->
-        <div class="container-fluid">
-            <h3 class="text-center">SDA FOREVER</h3>
-            <br><br>
-            <p>Bun venit în lumea echipei noastre de fotbal, creată și condusă cu pasiune de Ionicescu Alexandru și
-                Horoiu Cezar!! Suntem mândri să vă prezentăm echipa noastră,
-                formată exclusiv din cursanții talentați ai școlii noastre de IT SDA. Împărtășim nu doar dragostea
-                pentru tehnologie și dezvoltare, ci și pasiunea pentru fotbal.
-                Echipa noastră este un exemplu al forței și abilităților noastre combinate în lumea digitală și a
-                sportului. Suntem o comunitate strâns legată, care se bucură de fiecare moment petrecut pe teren,
-                demonstrând că pasiunea pentru tehnologie și sport se pot completa perfect.
-                Indiferent de nivelul de experiență în fotbal, echipa noastră oferă un mediu prietenos și encantator în
-                care să învățăm și să creștem împreună. Jucătorii noștri au o varietate de abilități și talente, și,
-                prin intermediul fotbalului, ne străduim să ne dezvoltăm atât individual, cât și ca echipă.
-                Antrenamentele noastre sunt un amestec captivant de tehnologie și sport. Îmbinăm noțiuni tehnice și
-                tactice cu exerciții fizice și jocuri practice pentru a ne îmbunătăți abilitățile fotbalistice. În
-                același timp, putem învăța și despre cooperare, comunicare și spirit de echipă - elemente esențiale în
-                atât în dezvoltarea software, cât și în jocul de fotbal.
-                Meciurile noastre sunt momentele în care putem demonstra ceea ce am învățat și cât de mult ne-am
-                dezvoltat ca echipă. Indiferent de rezultat, ne bucurăm de fiecare moment petrecut pe teren, învățând
-                din fiecare meci și căutând mereu să ne îmbunătățim performanțele.
-                Pe lângă excelența noastră în fotbal, suntem și o comunitate unită în afara terenului. Participăm la
-                evenimente sociale și organizăm activități de team-building pentru a ne cunoaște mai bine și a dezvolta
-                legături puternice de prietenie. Suntem un sprijin pentru colegii noștri nu doar în dezvoltarea
-                software, ci și în viața de zi cu zi.
-                Suntem mândri de realizările noastre și suntem plini de entuziasm pentru viitor. Împreună, ca echipă de
-                fotbal formată exclusiv din cursanți ai școlii de IT SDA, suntem dornici să ne dezvoltăm abilitățile și
-                să obținem rezultate remarcabile pe teren. Suntem dovada că pasiunile noastre pentru tehnologie și sport
-                se pot îmbina într-un mod unic și extraordinar.</p>
-            <br><br>
+<!-- Top navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark border-bottom">
+    <div class="container-fluid">
+        <button class="btn btn-light" id="sidebarToggle">Toggle Menu</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item active"><a class="nav-link " href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="informatii/">Informatii</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"> Order</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">User</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#!">Action</a>
+                        <a class="dropdown-item" href="#!">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#!">Something else here</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-</div>
-{#<body id="bg" style="background-image: url('{% static "images/real.jpg" %}');">#}
-<footer> <small>Copyright © 2023 Football History Archives . All Rights Reserved.</small></footer>
+</nav>
+<!-- Page content-->
 
-</body>
-</html>
