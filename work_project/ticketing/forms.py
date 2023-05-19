@@ -1,10 +1,10 @@
 
-from django.forms import TextInput, EmailInput, Textarea, DateInput, Select, forms
+from django.forms import TextInput, EmailInput, Textarea, DateInput, Select
+from django.forms import ModelForm
 
 from ticketing.models import Ticket
 
-
-class TicketForm(forms.ModelForm):
+class TicketForm(ModelForm):
 
     class Meta:
         model=Ticket

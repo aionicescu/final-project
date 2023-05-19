@@ -1,9 +1,10 @@
+{% load static %}
 <h4>{{ blog_content.title }}</h4>
-<div class="card">
+
     <header class="card__header">
         <h4>Informatii utile</h4>
     </header>
-    <div class="card__content">
+    <div>
         <div class="row">
             <div class="col-lg-12">
 
@@ -93,7 +94,7 @@
             </div>
         </div>
     </div>
-</div>
 
-<p>Data publicării: {{ informatii.date }}</p>
-<img src="{{ informatii_content.image_url }}" alt="informatii">
+
+<p>Data publicării: {% now "d-m-Y"%}</p>
+<img src="{% static 'images/image.png' %}" alt="informatii">
