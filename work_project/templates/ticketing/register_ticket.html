@@ -1,27 +1,60 @@
+{#{% extends 'base.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{#    <div class="container-fluid">#}
+{#        <div class="row">#}
+{#            <div class="col-md-6 offset-md-3">#}
+{#            <br><br>#}
+{#            <div class="card">#}
+{#                <div class="card-header">#}
+{#                    <h3 class="text-center">Create a new ticket</h3>#}
+{#                </div>#}
+{#                <div class="card-body">#}
+{#                    <form role="form" action="" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <div>#}
+{#                            {{ form.as_p }}#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#            </div>#}
+{#            <div class="card-footer text-center">#}
+{#                <button type="submit" class="btn btn-success">Save</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            {#            <div class="col-md-6 offset-md-3">#}
-            <br><br>
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-center">Create a new ticket</h3>
+            <div class="col-md-6 offset-md-3">
+                <br><br>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Create a new ticket</h3>
+                    </div>
+                    <div class="card-body">
+                        <form role="form" action="" method="post">
+                            {% csrf_token %}
+                            <div>
+                                {{ form.as_p }}
+                                <div class="form-group">
+                                    <label for="id_locuri">Select a seat:</label>
+                                    <select class="form-control" id="id_locuri" name="locuri">
+                                        <option value="" disabled selected>Selectează un loc</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <form role="form" action="" method="post">
-                        {% csrf_token %}
-                        <div>
-                            {{ form.as_p }}
-                        </div>
-                    </form>
-                </div>
-            </div>
-            {#            </div>#}
-            <div class="card-footer text-center">
-                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
 {% endblock %}
+
