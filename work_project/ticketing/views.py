@@ -16,3 +16,8 @@ def add_ticket(request):
     else:
         form = TicketForm()
     return render(request, 'ticketing/register_ticket.html', {'form': form})
+
+
+
+
+

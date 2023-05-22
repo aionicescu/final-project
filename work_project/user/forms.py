@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import TextInput, NumberInput, EmailInput, Textarea, DateInput, Select
-
+from django.contrib.auth.models import User
 from user.models import User
 
 
@@ -10,7 +10,7 @@ class UserForm(forms.ModelForm):
 
         fields = ['first_name', 'last_name',
                   'age', 'email', 'description',
-                  'active','gender']
+                  'active', 'gender']
 
         widgets = {
             'first_name': TextInput(attrs={'placeholder': 'Please enter your first name', 'class': 'form-control'}),

@@ -18,7 +18,12 @@ import django
 from django.contrib import admin
 from django.urls import path, include
 from .views import homepage
+from django.shortcuts import redirect
+
 
 urlpatterns = [
     path('', homepage, name='home'),
+
 ]
+
+

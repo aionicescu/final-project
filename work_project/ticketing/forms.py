@@ -28,9 +28,9 @@ class TicketForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # occupied_seats = Ticket.objects.values_list('event__tribuna', flat=True)  # Locurile deja ocupate
-        # available_seats = [str(i) for i in range(1, 20001) if str(i) not in occupied_seats]  # Locurile disponibile
-        # self.fields['seat'].choices = [(seat, seat) for seat in available_seats]
+        occupied_seats = Ticket.objects.values_list('tribuna', flat=True)  # Locurile deja ocupate
+        available_seats = [str(i) for i in range(1, 20001) if str(i) not in occupied_seats]  # Locurile disponibile
+        self.fields['seat'].choices = [(seat, seat) for seat in available_seats]
 
     class Meta:
         model = Ticket

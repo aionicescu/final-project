@@ -46,7 +46,7 @@ class Ticket(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     tribuna = models.CharField(max_length=20, choices=TRIBUNA_CHOICES)
-    # numar_locuri = models.IntegerField(default=0)
+    numar_locuri = models.IntegerField(default=0)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -64,6 +64,7 @@ class Order(models.Model):
     class Meta:
         verbose_name_plural = "Orders"
 
+
 class Stadion(models.Model):
     CAPACITY = 20000
     SECTOR_CHOICES = (
@@ -78,4 +79,3 @@ class Stadion(models.Model):
 
     def __str__(self):
         return f"{self.sector} - Locul {self.seat_number}"
-
