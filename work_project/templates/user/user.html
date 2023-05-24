@@ -18,7 +18,7 @@
                         <h3 class="text-center">Create a new user</h3>
                     </div>
 
-                    <form action="{% url 'create-user' %}" method="GET">
+                    <form action="{% url 'create-user' %}" method="post">
                         {% csrf_token %}
                         <div class="card-body">
                             {{ form.as_p }}
