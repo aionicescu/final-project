@@ -5,8 +5,8 @@ from .views import ProductListView, OrderSuccessView, PlaceOrderView
 urlpatterns = [
 
     path('', ProductListView.as_view(), name='product-list-all'),
-    path('add/', PlaceOrderView(), name='place-order'),
-    path('add/', ProductListView(), name='product-list'),
-    path('add/', OrderSuccessView(), name='order-success'),
+    path('add/', PlaceOrderView().as_view(), name='place-order'),
+    path('add/', ProductListView().as_view(), name='product-list'),
+    path('add/', OrderSuccessView().as_view(), name='order-success'),
 
 ]

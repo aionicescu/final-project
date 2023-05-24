@@ -45,7 +45,7 @@ class Ticket(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    tribuna = models.CharField(max_length=20, choices=TRIBUNA_CHOICES)
+    tribuna = models.CharField(max_length=20, choices=TRIBUNA_CHOICES, default=0)
     numar_locuri = models.IntegerField(default=0)
 
     def __str__(self):

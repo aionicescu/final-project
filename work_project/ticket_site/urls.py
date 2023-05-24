@@ -19,17 +19,12 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import redirect
-
-from user import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
     path('', include('home.urls')),
-    path('informatii/', views.informatii_view, name='informatii'),
-    path('ticketing/', include('ticketing.urls'))
+    path('informatii/',include('informatii.urls')),
+    path('ticketing/', include('ticketing.urls')),
+    path('event/', include('event.urls'))
 ]
-
-urlpatterns += staticfiles_urlpatterns()
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

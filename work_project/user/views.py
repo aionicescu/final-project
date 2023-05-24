@@ -1,4 +1,4 @@
-import self
+
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -66,3 +66,15 @@ class UserListView(ListView):
 
 def informatii_view(request):
     return True
+
+
+# from django.core.management import call_command
+#
+# call_command('makemigrations', 'ticketing')
+#
+# from django.core.management.commands.makemigrations import Command as MakemigrationsCommand
+#
+# command = MakemigrationsCommand()
+# command.execute('ticketing')
+
+
