@@ -30,7 +30,8 @@ class UserCreateView(CreateView):
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect("/success/")
+            form.save()
+            return super().post(request, *args, **kwargs)
         return render(request, self.template_name, {"form": form})
 
     # get_context_data() = User.objects.filter(
@@ -58,7 +59,8 @@ class UserListView(ListView):
     def post(self,request,*args,**kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect("/success/")
+            form.save()
+            return super().post(request, *args, **kwargs)
         return render(request, self.template_name, {"form": form})
 
     # permission_required = 'user.view_list_of_user'

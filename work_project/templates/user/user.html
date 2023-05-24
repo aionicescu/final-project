@@ -18,14 +18,11 @@
                         <h3 class="text-center">Create a new user</h3>
                     </div>
 
-                    <form  action="{% url 'create-user' %}" method="GET">
+                    <form action="{% url 'create-user' %}" method="GET">
                         {% csrf_token %}
                         <div class="card-body">
                             {{ form.as_p }}
                         </div>
-
-                        <input type="text" name="first_name">
-                        <input type="text" name="last_name">
 
                         <button type="submit">Submit</button>
                     </form>
@@ -33,13 +30,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-
-
-
-
-
 
 {% endblock %}
