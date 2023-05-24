@@ -136,3 +136,12 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_REDIRECT_URL = 'home'  # înlocuiește cu ruta ta corespunzătoare
+
+# Setarea URL-ului de redirecționare după deconectare
+LOGOUT_REDIRECT_URL = 'home'  # înlocuiește cu ruta ta corespunzătoare
+
+# Adaugarea backend-ului de autentificare
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]

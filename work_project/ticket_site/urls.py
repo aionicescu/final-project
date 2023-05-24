@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +27,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('informatii/',include('informatii.urls')),
     path('ticketing/', include('ticketing.urls')),
-    path('event/', include('event.urls'))
+    path('event/', include('event.urls')),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout')
 ]
