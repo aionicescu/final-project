@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.http import HttpResponse
 
 
 class User(models.Model):
@@ -14,7 +14,7 @@ class User(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     gender = models.CharField(max_length=6, choices=gender_options)
-    # event = models.ForeignKey(Eveniment, on_delete=models.CASCADE, null=True)
+
 
     created_at = models.DateTimeField(auto_now_add=True,
                                       null=True)

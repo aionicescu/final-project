@@ -1,9 +1,8 @@
-
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DeleteView
 
 import user
 from user.forms import UserForm
@@ -56,7 +55,7 @@ class UserListView(ListView):
     success_url = reverse_lazy('list-of-user')
     permission_required = 'user.add_user'
 
-    def post(self,request,*args,**kwargs):
+    def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
@@ -70,13 +69,8 @@ def informatii_view(request):
     return True
 
 
-# from django.core.management import call_command
-#
-# call_command('makemigrations', 'ticketing')
-#
-# from django.core.management.commands.makemigrations import Command as MakemigrationsCommand
-#
-# command = MakemigrationsCommand()
-# command.execute('ticketing')
-
-
+class UserDeleteView(LoginRequiredMixin, DeleteView):
+    template_name = 'user/delete_user.html'
+    model = User
+    success_url = reverse_lazy('list-of-user')
+    permission_required = 'user.delete_list_of_user'

@@ -13,7 +13,6 @@ def user_events(request):
         return render(request, 'event/evenimente.html', context)
 
 
-
 # def create_event(request):
 #     if request.method == 'POST':
 #         form = EventForm(request.POST)
@@ -29,17 +28,20 @@ from django.contrib.auth.decorators import login_required
 from event.models import Eveniment
 from ticketing import forms
 
+
 @login_required
 def create_event(request):
-    if request.method == 'post':
+    if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
-            event = form.save(commit=False)
-            event.user = request.user
-            event.save()
+            form.save()
             return redirect('event:event_list')
     else:
         form = EventForm()
     return render(request, 'event/evenimente.html', {'form': form})
+
+
+def adauga_eveniment(request):
+    return None
 
 
