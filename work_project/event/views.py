@@ -41,3 +41,5 @@ def create_event(request):
     else:
         form = EventForm()
     return render(request, 'event/evenimente.html', {'form': form})
+
+
