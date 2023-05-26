@@ -49,7 +49,7 @@
                         <li class="nav-item active"><a class="nav-link " href="#!">Shop</a></li>
                         <li class="nav-item active"><a class="nav-link " href="{% url 'login' %}">Login</a></li>
                         <li class="nav-item active"><a class="nav-link " href="{% url 'logout' %}">Logout</a></li>
-                        {#        <li class="nav-item active"><a class="nav-link active" href="{% url 'create-user' %}">User</a>#}
+                        {#  <li class="nav-item active"><a class="nav-link active" href="{% url 'create-user' %}">User</a>#}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
@@ -58,7 +58,7 @@
                             <ul class="dropdown-menu">
 
                                 <li><a class="dropdown-item" href="{% url 'create-user' %}">Create a new
-                                        user</a></li>
+                                    user</a></li>
 
 
                                 <li><a class=" dropdown-item" href="{% url 'list-of-user' %}">List of user </a></li>
@@ -66,6 +66,13 @@
 
                             </ul>
                         </li>
+
+
+                        <form method="get" action="{% url 'search' %}" class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" name="value" placeholder="Search"
+                                   aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
 
 
                         <li class="nav-item dropdown">
@@ -85,8 +92,9 @@
         <!-- Page content-->
         <div class="container-fluid">
             {% block content %}
-                <!--Aici o sa fie randat continutul fiecarui template creat-->
+
             {% endblock %}
+
         </div>
     </div>
 </div>

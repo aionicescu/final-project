@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DeleteView
+from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView
 
 import user
 from user.forms import UserForm
@@ -74,3 +76,33 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = User
     success_url = reverse_lazy('list-of-user')
     permission_required = 'user.delete_list_of_user'
+
+
+class UserDetailsView(LoginRequiredMixin, DetailView):
+    template_name = 'user/details_user/html'
+    model = User
+    success_url = reverse_lazy('list-of-user')
+    permission_required = 'user.details_list_of_user'
+
+
+class UserUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = 'user/update_user.html'
+    model = User
+    success_url = reverse_lazy('list-of-user')
+    permission_required = 'user.update_list_of_user'
+
+
+@login_required
+def search(request):
+    # accesam valoarea parametrului value pe care il gasim in url din browser la accesarea butonului search din formular
+    get_value = request.GET.get('value')
+
+    # icontains -> cautam stringul intr un alt string
+    if get_value:
+        get_data = User.objects.filter(Q(first_name__icontains=get_value) | Q(
+            last_name__icontains=get_value))  # toti studentii care respecta conditia din filter
+    else:
+        get_data = User.objects.all()
+    context = {'all_students': get_data}
+
+    return render(request, 'User/search.html', context)

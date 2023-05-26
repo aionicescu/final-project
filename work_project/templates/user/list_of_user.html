@@ -59,12 +59,13 @@
                                 more actions
                             </button>
                             <ul class="dropdown-menu">
-{#                                <li><a class="dropdown-item"#}
-{#                                       href="{% url 'update-student' student.id %}">Update</a></li>#}
+                                <li><a class="dropdown-item"
+                                       href="{% url 'update-user' user.id %}">Update</a></li>
                                 <li><a class="dropdown-item"
                                        href="{% url 'delete-user' user.id %}">Delete</a></li>
-{#                                <li><a class="dropdown-item"#}
-{#                                       href="{% url 'details-student' student.id %}">View</a></li>#}
+                                <li><a class="dropdown-item"
+                                       href="{% url 'details-user' user.id %}">View</a></li>
+
 {#                                {% if perms.student.inactive_student %}#}
 {#                                    <li>#}
 {#                                        <!-- Button trigger modal -->#}
@@ -78,7 +79,7 @@
                         </div>
                     </td>
                 </tr>
-                <!-- Modal -->
+{#                <!-- Modal -->#}
 {#                {% if perms.student.inactive_student %}#}
 {#                    <div class="modal fade" id="student_{{ student.id }}" tabindex="-1"#}
 {#                         aria-labelledby="exampleModalLabel"#}
