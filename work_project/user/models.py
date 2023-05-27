@@ -15,7 +15,6 @@ class User(models.Model):
     end_date = models.DateTimeField()
     gender = models.CharField(max_length=6, choices=gender_options)
 
-
     created_at = models.DateTimeField(auto_now_add=True,
                                       null=True)
     updated_at = models.DateTimeField(auto_now=True,
@@ -23,6 +22,3 @@ class User(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
-
-
-

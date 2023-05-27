@@ -79,7 +79,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class UserDetailsView(LoginRequiredMixin, DetailView):
-    template_name = 'user/details_user/html'
+    template_name = 'user/details_user.html'
     model = User
     success_url = reverse_lazy('list-of-user')
     permission_required = 'user.details_list_of_user'
@@ -94,15 +94,15 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
 @login_required
 def search(request):
-    # accesam valoarea parametrului value pe care il gasim in url din browser la accesarea butonului search din formular
+
     get_value = request.GET.get('value')
 
-    # icontains -> cautam stringul intr un alt string
+
     if get_value:
         get_data = User.objects.filter(Q(first_name__icontains=get_value) | Q(
-            last_name__icontains=get_value))  # toti studentii care respecta conditia din filter
+            last_name__icontains=get_value))
     else:
         get_data = User.objects.all()
     context = {'all_students': get_data}
 
-    return render(request, 'User/search.html', context)
+    return render(request, 'user/search.html', context)
