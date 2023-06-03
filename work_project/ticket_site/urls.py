@@ -32,6 +32,8 @@ urlpatterns = [
     path('event/', include('event.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('user/<int:pk>/', views.UserUpdateView, name='update-user'),
+    path('update_user/,<int:pk>/', views.UserUpdateView, name='update-user'),
+
+
 
 ]

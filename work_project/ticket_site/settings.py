@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'informatii',
     'ticketing',
 
+
 ]
 
 MIDDLEWARE = [
@@ -135,8 +136,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_REDIRECT_URL = 'home'  # înlocuiește cu ruta ta corespunzătoare
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'  # înlocuiește cu ruta ta corespunzătoare
 
 # Setarea URL-ului de redirecționare după deconectare
 LOGOUT_REDIRECT_URL = 'home'  # înlocuiește cu ruta ta corespunzătoare

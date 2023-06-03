@@ -5,7 +5,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView
-
+from jinja2.ext import do
+from django.contrib.auth.decorators import login_required
 import user
 from user.forms import UserForm
 from user.models import User
@@ -92,17 +93,18 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     permission_required = 'user.update_list_of_user'
 
 
-@login_required
+@login_required(login_url="html page")
 def search(request):
-
     get_value = request.GET.get('value')
-
 
     if get_value:
         get_data = User.objects.filter(Q(first_name__icontains=get_value) | Q(
             last_name__icontains=get_value))
     else:
         get_data = User.objects.all()
-    context = {'all_students': get_data}
+    context = {'all_user': get_data}
 
     return render(request, 'user/search.html', context)
+
+
+
