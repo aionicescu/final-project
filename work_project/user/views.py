@@ -10,39 +10,24 @@ from django.contrib.auth.decorators import login_required
 import user
 from user.forms import UserForm
 from user.models import User
-import datetime
 
 
 class UserCreateView(CreateView):
     template_name = 'user/user.html'
     model = User
     form_class = UserForm
-    success_url = reverse_lazy('list-of-user')
+    success_url = reverse_lazy('list-of-user')   # de trecut redirectionarea catre un mesaj de bun venit
     permission_required = 'user.add_user'
 
     def get_queryset(self):
         return User.objects.filter(active=True)
 
     # def get_context_data(self, **kwargs):
-    #     login_required()
-    #     data = super().get_context_data(**kwargs)
-    #     now = datetime.datetime.now()
-    #     data['current_datetime'] = now
-    #     trainers = User.objects.all()
-    #     data['get_all_user'] = User
+    #     data = super().post(**kwargs)
+    #     # now = datetime.datetime.now()
+    #     # data['current_datetime'] = now
     #
-    #     get_all_students = User.objects.filter(
-    #         active=True)
-    #     filters = User(self.request.GET,
-    #                    queryset=get_all_students)
-    #     get_all_user = filters.qs
-    #
-    #     data[
-    #         'all_user'] = get_all_user
-    #     data[
-    #         'form_filters'] = filters.form
-    #
-    #     return data
+    #     data['post_all_user'] = user
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -50,6 +35,19 @@ class UserCreateView(CreateView):
             form.save()
             return super().post(request, *args, **kwargs)
         return render(request, self.template_name, {"form": form})
+
+    # get_context_data() = User.objects.filter(
+    #     active=True)
+    # filters = User(self.request.GET, queryset=get_context_data())
+    #
+    # get_context_data() = filters.qs
+    #
+    # data[
+    #     'all_user'] = get_all_user
+    # data[
+    #     'form_filters'] = filters.form
+    #
+    # return data
 
 
 class UserListView(ListView):
@@ -107,5 +105,6 @@ def search(request):
     context = {'all_user': get_data}
 
     return render(request, 'registration/search.html', context)
+
 
 
