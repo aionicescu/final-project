@@ -20,5 +20,10 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True,
                                       null=True)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(args, kwargs)
+        self.qs = None
+        self.form = None
+
     def __str__(self):
         return f'{self.first_name} {self.last_name}'

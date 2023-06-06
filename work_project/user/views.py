@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 import user
 from user.forms import UserForm
 from user.models import User
+import datetime
 
 
 class UserCreateView(CreateView):
@@ -23,11 +24,25 @@ class UserCreateView(CreateView):
         return User.objects.filter(active=True)
 
     # def get_context_data(self, **kwargs):
-    #     data = super().post(**kwargs)
-    #     # now = datetime.datetime.now()
-    #     # data['current_datetime'] = now
+    #     login_required()
+    #     data = super().get_context_data(**kwargs)
+    #     now = datetime.datetime.now()
+    #     data['current_datetime'] = now
+    #     trainers = User.objects.all()
+    #     data['get_all_user'] = User
     #
-    #     data['post_all_user'] = user
+    #     get_all_students = User.objects.filter(
+    #         active=True)
+    #     filters = User(self.request.GET,
+    #                    queryset=get_all_students)
+    #     get_all_user = filters.qs
+    #
+    #     data[
+    #         'all_user'] = get_all_user
+    #     data[
+    #         'form_filters'] = filters.form
+    #
+    #     return data
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -35,19 +50,6 @@ class UserCreateView(CreateView):
             form.save()
             return super().post(request, *args, **kwargs)
         return render(request, self.template_name, {"form": form})
-
-    # get_context_data() = User.objects.filter(
-    #     active=True)
-    # filters = User(self.request.GET, queryset=get_context_data())
-    #
-    # get_context_data() = filters.qs
-    #
-    # data[
-    #     'all_user'] = get_all_user
-    # data[
-    #     'form_filters'] = filters.form
-    #
-    # return data
 
 
 class UserListView(ListView):
@@ -73,21 +75,21 @@ def informatii_view(request):
 
 
 class UserDeleteView(LoginRequiredMixin, DeleteView):
-    template_name = 'user/delete_user.html'
+    template_name = 'registration/delete_user.html'
     model = User
     success_url = reverse_lazy('list-of-user')
     permission_required = 'user.delete_list_of_user'
 
 
 class UserDetailsView(LoginRequiredMixin, DetailView):
-    template_name = 'user/details_user.html'
+    template_name = 'registration/details_user.html'
     model = User
     success_url = reverse_lazy('list-of-user')
     permission_required = 'user.details_list_of_user'
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = 'user/update_user.html'
+    template_name = 'registration/update_user.html'
     model = User
     success_url = reverse_lazy('list-of-user')
     permission_required = 'user.update_list_of_user'
@@ -104,7 +106,6 @@ def search(request):
         get_data = User.objects.all()
     context = {'all_user': get_data}
 
-    return render(request, 'user/search.html', context)
-
+    return render(request, 'registration/search.html', context)
 
 

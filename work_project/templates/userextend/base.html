@@ -28,8 +28,9 @@
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Club</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Fani</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'event_list' %}">Events</a>
-{#            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"></a>#}
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'register-ticket' %}">Ticketing</a>
+            {#            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"></a>#}
+            <a class="list-group-item list-group-item-action list-group-item-light p-3"
+               href="{% url 'register-ticket' %}">Ticketing</a>
         </div>
     </div>
     <!-- Page content wrapper-->
@@ -44,11 +45,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                        <li class="nav-item active"><a class="nav-link "  href="{% url 'home' %}">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link " href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item active"><a class="nav-link " href="#!">Shop</a></li>
                         <li class="nav-item active"><a class="nav-link " href="{% url 'login' %}">Login</a></li>
                         <li class="nav-item active"><a class="nav-link " href="{% url 'logout' %}">Logout</a></li>
-{#                          <li class="nav-item active"><a class="nav-link active" href="{% url 'create-user' %}">User</a>#}
+                        {#                          <li class="nav-item active"><a class="nav-link active" href="{% url 'create-user' %}">User</a>#}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
@@ -56,15 +57,20 @@
                             </a>
                             <ul class="dropdown-menu">
 
-                                <li><a class="dropdown-item" href="{% url 'create-user' %}">Create a new
-                                    user</a></li>
+
+                                    <li><a class="dropdown-item" href="{% url 'create-user' %}">Create a new
+                                        user</a></li>
 
 
-                                <li><a class=" dropdown-item" href="{% url 'list-of-user' %}">List of user </a></li>
+
+
+                                    <li><a class=" dropdown-item" href="{% url 'list-of-user' %}">List of user </a></li>
+
 
 
                             </ul>
                         </li>
+
 
 
                         <form method="get" action="{% url 'search' %}" class="d-flex" role="search">
@@ -72,18 +78,18 @@
                                    aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        
 
-{#                        <li class="nav-item dropdown">#}
-{#                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"#}
-{#                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
-{#                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">#}
-{#                                <a class="dropdown-item" href="#!">Action</a>#}
-{#                                <a class="dropdown-item" href="#!">Another action</a>#}
-{#                                <div class="dropdown-divider"></div>#}
-{#                                <a class="dropdown-item" href="#!">Something else here</a>#}
-{#                            </div>#}
-{#                        </li>#}
+
+                        {#                        <li class="nav-item dropdown">#}
+                        {#                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"#}
+                        {#                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
+                        {#                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">#}
+                        {#                                <a class="dropdown-item" href="#!">Action</a>#}
+                        {#                                <a class="dropdown-item" href="#!">Another action</a>#}
+                        {#                                <div class="dropdown-divider"></div>#}
+                        {#                                <a class="dropdown-item" href="#!">Something else here</a>#}
+                        {#                            </div>#}
+                        {#                        </li>#}
                     </ul>
                 </div>
             </div>

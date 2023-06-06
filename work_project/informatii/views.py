@@ -25,7 +25,7 @@ def informatii_view(request):
         'date': '15 mai 2023',
         'image_url': '/images/image.png',
     }
-    return render(request, 'informatii.html', {'informatii_content': informatii})
+    return render(request, 'userextend/informatii.html', {'informatii_content': informatii})
 
 
 def get_details(request):

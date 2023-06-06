@@ -1,25 +1,30 @@
-{% extends 'base.html' %}
+{% extends 'userextend/base.html' %}
 
 {% block title %} Details - {{ user }} {% endblock %}
 
 {% block content %}
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <br><br><br>
                 <div class="card text-center">
                     <div class="card-header">
-                       View details
+                        View details
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ user }}</h5>
-                        <p class="card-text">Name of user: {{ user.ticket }}</p>
-                        <p class="card-text">Event name: {{ user.ticket.event }}</p>
-                        <a href="{% url 'list-of-user' %}" class="btn btn-primary">Cancel</a>
-                    </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ user }}</h5>
+                            <p class="card-text">Name of user: {{ user.ticket }}</p>
+                            <p class="card-text">Event name: {{ user.ticket.event }}</p>
+                            <a href="{% url 'list-of-user' %}" class="btn btn-primary">Cancel</a>
+                        </div>
+
                     <div class="card-footer text-body-secondary">
-                        Created at : {{user.created_at|date:"d-m-Y H:i:s" }}/ Update at: {{ user.updated_at|date:"d-m-Y H:i:s" }}
+                        Created at : {{ user.created_at|date:"d-m-Y H:i:s" }}/ Update
+                        at: {{ user.updated_at|date:"d-m-Y H:i:s" }}
                     </div>
+
                 </div>
             </div>
         </div>
