@@ -107,5 +107,3 @@ def search(request):
     context = {'all_user': get_data}
 
     return render(request, 'registration/search.html', context)
-
-
