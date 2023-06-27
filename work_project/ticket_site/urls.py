@@ -34,6 +34,7 @@ urlpatterns = [
     path('event/', include('event.urls')),
     path('login/', auth_views.LoginView.as_view(form_class=AuthenticationNewForm), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('update_user/,<int:pk>/', UserUpdateView, name='update-user'),
     path('', include('django.contrib.auth.urls')),
     path('', include('userextend.urls')),
 
