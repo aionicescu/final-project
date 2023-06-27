@@ -1,6 +1,9 @@
+from asyncio import Event
+
 from django.db import models
 
-from event.models import Event, TicketStatus
+from event.models import Eveniment
+from ticketing.models import Ticket
 
 
 class Ticket(models.Model):
@@ -8,7 +11,7 @@ class Ticket(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=30)
     description = models.TextField(max_length=300)
-    status = models.CharField(max_length=100, choices=TicketStatus)
+    status = models.CharField(max_length=100, choices=Ticket)
 
     active = models.BooleanField(default=True)
     start_date = models.DateField()
