@@ -1,6 +1,5 @@
 from django import forms
 from django.forms import TextInput, NumberInput, EmailInput, Textarea, DateInput, Select
-from django.contrib.auth.models import User
 from user.models import User
 
 
