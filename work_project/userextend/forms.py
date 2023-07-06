@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.forms import TextInput, EmailInput
 
@@ -35,17 +35,17 @@ class AuthenticationNewForm(AuthenticationForm):
             {'class': 'form-control', 'placeholder': 'Please enter your password'})
 
 
-class PasswordChangeNewForm(PasswordChangeForm):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.fields['old_password'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your Old Passowrd'}
-        )
-        self.fields["new_password1"].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your New Passowrd'}
-        )
-        self.fields["new_password2"].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please re-enter your New Passowrd'}
-        )
+# class PasswordChangeNewForm(PasswordChangeForm):
+#
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#
+#         self.fields['old_password'].widget.attrs.update(
+#             {'class': 'form-control', 'placeholder': 'Please enter your Old Passowrd'}
+#         )
+#         self.fields["new_password1"].widget.attrs.update(
+#             {'class': 'form-control', 'placeholder': 'Please enter your New Passowrd'}
+#         )
+#         self.fields["new_password2"].widget.attrs.update(
+#             {'class': 'form-control', 'placeholder': 'Please re-enter your New Passowrd'}
+#         )
