@@ -2,7 +2,6 @@ import django_filters
 from django import forms
 from django_filters import DateFilter
 
-from user.models import User
 
 # Definim o clasa in care specificam modelul si fieldurile ce apartin modelului pe care le vom avea in FORMULARUL DE FILTRARE
 
@@ -13,16 +12,17 @@ from user.models import User
 
 # lte -> less than or egual to
 # lt ->  less than
+from user.models import User
 
 
 class UserFilter(django_filters.FilterSet):
 
-    list_of_user = [(user.first_name, user.first_name.upper()) for user in User.objects.all() if user.active is True]
+    #list_of_user = [(user.first_name, user.first_name.upper()) for user in User.objects.all() if user.active is True]
 
 
     # pentru a elimina datele duplicate dintr-o lista il vom converti intr-un set si pt pastrarea ordinii elem din set convert in lista
-    first_name = django_filters.ChoiceFilter(choices=list(set(list_of_user)))
-    #first_name = django_filters.CharFilter(lookup_expr='icontains', label='First name')
+    #first_name = django_filters.ChoiceFilter(choices=list(set(list_of_user)))
+    first_name = django_filters.CharFilter(lookup_expr='icontains', label='First name')
     last_name = django_filters.CharFilter(lookup_expr='icontains', label='Last name')
 
 

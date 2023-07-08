@@ -1,6 +1,7 @@
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractBaseUser, AbstractUser
 from django.db import models
 from django.http import HttpResponse
+
 
 class User(AbstractBaseUser):
     gender_options = (
@@ -49,4 +50,3 @@ class User(AbstractBaseUser):
 #
 # def __str__(self):
 #     return f'{self.first_name} {self.last_name}'
-

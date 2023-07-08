@@ -25,6 +25,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.idea/
+.idea/*
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -160,3 +162,4 @@ cython_debug/
 .idea/*
 .idea/vcs.xml
 /.idea/vcs.xml
+/work_project/event/
