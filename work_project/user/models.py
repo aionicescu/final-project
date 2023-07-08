@@ -1,8 +1,8 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
 from django.http import HttpResponse
 
-class User(AbstractUser):
+class User(AbstractBaseUser):
     gender_options = (
         ('male', 'Male'),
         ('female', 'Female')

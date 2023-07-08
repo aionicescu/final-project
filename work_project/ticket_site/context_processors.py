@@ -3,7 +3,7 @@ from user.models import User
 
 def get_all_users(request):
     students = User.objects.all()  # interoghez tabela student_student pentru a lua toti studentii
-    return {'get_users': User}
+    return {'get_users': request.user}
 
 # STEP1: Definim un fisier nou in djangoProject numit context_processors in care definim o functie ce va returna un dictionar
 # cu toti studenti
