@@ -18,19 +18,20 @@
     <!-- Sidebar-->
     <div class="border-end bg-white" id="sidebar-wrapper">
         <div class="sidebar-heading border-bottom bg-light">
-            <a href="{% url 'home' %}">
-                <img src="{% static 'images/favicon.ico' %}" alt="informatii" style="width:30px;heigth:30px;">
-            </a>
-            FC SDA
+            <a href="{% url 'home' %}"></a>
+                <img src="{% static 'images/ro.jpg' %}" alt="informatii" style="width:30px;heigth:30px;">
+          Stadion
         </div>
         <div class="list-group list-group-flush  ">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'informatii' %}">Informații</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Club</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Fani</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'event_list' %}">Events</a>
-            {#            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"></a>#}
-            <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="{% url 'register-ticket' %}">Ticketing</a>
+            <p><a class="list-group-item list-group-item-action list-group-item-light p-3"
+                  href="{% url 'informatii' %}">Informații</a></p>
+            <p><a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Club</a></p>
+            <p><a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Fani</a></p>
+            <p><a class="list-group-item list-group-item-action list-group-item-light p-3"
+                  href="{% url 'event_list' %}">Events</a></p>
+            <p><a class="list-group-item list-group-item-action list-group-item-light p-3"
+                  href="{% url 'register-ticket' %}">Ticketing</a></p>
+
         </div>
     </div>
     <!-- Page content wrapper-->
@@ -58,19 +59,15 @@
                             <ul class="dropdown-menu">
 
 
-                                    <li><a class="dropdown-item" href="{% url 'create-user' %}">Create a new
-                                        user</a></li>
+                                <li><a class="dropdown-item" href="{% url 'create-user' %}">Create a new
+                                    user</a></li>
 
 
-
-
-                                    <li><a class=" dropdown-item" href="{% url 'list-of-user' %}">List of user </a></li>
-
+                                <li><a class=" dropdown-item" href="{% url 'list-of-user' %}">List of user </a></li>
 
 
                             </ul>
                         </li>
-
 
 
                         <form method="get" action="{% url 'search' %}" class="d-flex" role="search">

@@ -16,7 +16,6 @@ from django.views.generic import CreateView
 import home
 from user.forms import UserForm
 
-
 class UserCreateView(CreateView):
     template_name = 'userextend/create_user.html'
     model = User
